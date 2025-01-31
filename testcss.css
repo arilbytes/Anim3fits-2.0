@@ -37,11 +37,11 @@ body {
     position: absolute;
     top: 20%;
     left: 10%;
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
     background: radial-gradient(circle,#00B09B , #96C93D);
-    filter: blur(30px);
     border-radius: 50%;
+    filter: blur(12px);
     opacity: 0.5;
     animation: moveBlur 6s infinite alternate ease-in-out;
 }
@@ -49,15 +49,15 @@ body {
 /* Animated Blurred Rectangle */
 .blur-rectangle {
     position: absolute;
-    bottom: 10%;
-    right: 15%;
-    width: 300px;
+    top: 25%;
+    left: 50%;
+    width: 150px;
     height: 150px;
-    background: linear-gradient(120deg, #AE67FA, #F498AD);
-    filter: blur(30px);
-    border-radius: 20px;
-    opacity: 0.4;
-    animation: moveBlur 8s infinite alternate ease-in-out;
+    background: radial-gradient(circle,#00B09B , #96C93D);
+    border-radius: 50%;
+    filter: blur(12px);
+    opacity: 0.5;
+    animation: moveBlur 6s infinite alternate ease-in-out;
 }
 
 /* Smaller Blurred Element */
