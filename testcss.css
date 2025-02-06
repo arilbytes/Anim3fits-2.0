@@ -1,85 +1,108 @@
-/* General Styling */
+/* Overall page styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #313031;
-    color: #969797;
-    overflow-x: hidden;
+  background-color: #313031;
+  margin: 0;
+  padding: 20px;
+  font-family: sans-serif;
 }
 
-/* Navbar */
-.navbar {
-    background-color: black;
-    padding: 20px;
-    text-align: center;
-    color: white;
+/* Container for all pairs */
+.pairs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-/* Content Section */
-.content {
-    text-align: center;
-    margin-top: 50px;
+/* Each pair arranged horizontally */
+.pair {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Blur Wrapper (Holds all blur divs) */
-.blur-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Push behind content */
+/* Common style for the gradient circles */
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.8rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  /* Optional: reduce blur on text by using a pseudo-element for the gradient background */
+  position: relative;
+  z-index: 1;
 }
 
-/* Animated Blurred Circle */
-.blur-circle {
-    position: absolute;
-    top: 20%;
-    left: 10%;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle,#00B09B , #96C93D);
-    border-radius: 50%;
-    filter: blur(12px);
-    opacity: 0.5;
-    animation: moveBlur 6s infinite alternate ease-in-out;
+/* Using a pseudo-element to apply the gradient so the text remains crisp */
+.circle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: -1;
 }
 
-/* Animated Blurred Rectangle */
-.blur-rectangle {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle,#00B09B , #96C93D);
-    border-radius: 50%;
-    filter: blur(12px);
-    opacity: 0.5;
-    animation: moveBlur 6s infinite alternate ease-in-out;
+/* Gradient backgrounds for each circle */
+
+/* Pair 1 */
+.royal-purple::before {
+  background: linear-gradient(45deg, #6a3093, #a044ff);
+}
+.dark-blue-black::before {
+  background: linear-gradient(45deg, #1f1c2c, #928dab);
 }
 
-/* Smaller Blurred Element */
-.blur-small {
-    position: absolute;
-    top: 50%;
-    left: 60%;
-    width: 150px;
-    height: 150px;
-    background: linear-gradient(135deg, #FFB347, #FFCC33);
-    filter: blur(30px);
-    border-radius: 50%;
-    opacity: 0.6;
-    animation: moveBlur 5s infinite alternate ease-in-out;
+/* Pair 2 */
+.emerald-depth::before {
+  background: linear-gradient(45deg, #004e92, #000428);
+}
+.neutral::before {
+  background: linear-gradient(45deg, #232526, #414345);
 }
 
-/* Keyframe Animation for Floating Effect */
-@keyframes moveBlur {
-    0% {
-        transform: translate(0px, 0px);
-    }
-    100% {
-        transform: translate(30px, -30px);
-    }
+/* Pair 3 */
+.electric-violet::before {
+  background: linear-gradient(45deg, #2C3E50, #FD746C);
+}
+.mystic-red::before {
+  background: linear-gradient(45deg, #8E0000, #FF1C68);
+}
+
+/* Pair 4 */
+.emerald-illusion::before {
+  background: linear-gradient(45deg, #004e92, #000428);
+}
+.vivid-sapphire::before {
+  background: linear-gradient(45deg, #1a2980, #26d0ce);
+}
+
+/* Pair 5 */
+.aurora-blaze::before {
+  background: linear-gradient(45deg, #0B486B, #F56217);
+}
+.electric-teal::before {
+  background: linear-gradient(45deg, #11998e, #38ef7d);
+}
+
+/* Pair 6 */
+.royal-gold::before {
+  background: linear-gradient(45deg, #FFD700, #B8860B);
+}
+.icy-blue::before {
+  background: linear-gradient(45deg, #2980b9, #6dd5fa);
+}
+
+/* Pair 7 */
+.smokey-quartz::before {
+  background: linear-gradient(45deg, #373b44, #4286f4);
+}
+.mistic-forest::before {
+  background: linear-gradient(45deg, #2c3e50, #4ca1af);
 }
